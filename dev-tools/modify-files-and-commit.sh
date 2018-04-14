@@ -69,9 +69,11 @@ git checkout master
 git add -A
 git commit -am "V1.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER [ci skip]"
 
-# *************************************************************
-# Travis now moves to the before_deploy: section of .travis.yml
-# *************************************************************
+# *****************************************
+# Push our commit and tags back to the repo
+# *****************************************
+
+sudo git push origin master
 
 # MIT License
 
