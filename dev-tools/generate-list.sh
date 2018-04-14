@@ -30,8 +30,8 @@
 # ******************
 # Set Some Variables
 # ******************
-SRC1=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv1.list
-SRC2=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv2.list
+#SRC1=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv1.list
+#SRC2=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv2.list
 #SRC3=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv3.list
 #SRC4=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv4.list
 #SRC5=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv5.list
@@ -44,10 +44,12 @@ sudo truncate -s 0 $SRCOUT
 
 # Join Files Together and Sort for Duplicates
 
-sudo cat $SRC1 $SRC2 > $SRCOUT
+sudo cat $TRAVIS_BUILD_DIR/input-sources/*.list > $SRCOUT
 sort -u $SRCOUT -o $SRCOUT
 
 # Format the file to Unix format
 
 sudo dos2unix $SRCOUT
 
+# Exit the script
+exit 0
