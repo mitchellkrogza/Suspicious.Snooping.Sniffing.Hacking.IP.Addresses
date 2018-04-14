@@ -44,7 +44,7 @@ sudo truncate -s 0 $SRCOUT
 
 # Join Files Together and Sort for Duplicates
 
-sudo cat $TRAVIS_BUILD_DIR/input-sources/*.list > $SRCOUT
+cat $TRAVIS_BUILD_DIR/input-sources/*.list > $TRAVIS_BUILD_DIR/ips.list
 sort -u $SRCOUT -o $SRCOUT
 
 # Format the file to Unix format
