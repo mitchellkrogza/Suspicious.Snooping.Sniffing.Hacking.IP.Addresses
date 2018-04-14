@@ -17,7 +17,7 @@ matrix:
 before_install:
   - export TZ=Africa/Johannesburg
 
- install:
+install:
   - sudo apt-get -y install dos2unix
 
 script:
@@ -26,5 +26,4 @@ script:
 
 notifications:
   email: false
-
   
