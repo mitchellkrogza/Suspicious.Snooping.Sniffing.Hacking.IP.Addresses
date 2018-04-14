@@ -14,11 +14,13 @@ cache:
 matrix:
   fast_finish: true
 
+addons:
+  apt:
+    packages:
+      - dos2unix
+
 before_install:
   - export TZ=Africa/Johannesburg
-
-install:
-  - sudo apt-get -y install dos2unix
 
 script:
   - bash dev-tools/generate-list.sh
