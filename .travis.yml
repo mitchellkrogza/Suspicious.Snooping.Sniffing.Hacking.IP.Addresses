@@ -24,6 +24,7 @@ before_install:
 
 script:
   - bash dev-tools/generate-list.sh
+  - bash dev-tools/modify-readme.sh
   - bash dev-tools/modify-files-and-commit.sh
 
 notifications:
