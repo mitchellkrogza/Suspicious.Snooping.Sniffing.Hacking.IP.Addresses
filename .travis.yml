@@ -1,0 +1,39 @@
+env:
+  global:
+    - secure: E5Eea9O5o47EQg1QRz0tuqHBEhqDJpfY7mbNi2j0zg1HRq8Xj87sQaUYfy29CF4YM0MIAPyPlZkj2ZjJRUe9ZS2ZOXKktl1vqXwEZdn4UDHvnWX6eNMZ86m5hxxQZhPMAASFGgGh+t1r/13Os+99IJZe6X0JrgDw8nYKAyo8W7NpITF2I4SS7gWemZU51eWbW6nROArH8vKYPYwAZ4ePiNhVXyGjlZaN0+2DQI9NLT+2SnLCenYOZqdcZZgFVZt0qwA4CK5oaD5+xBsAEM0CWX7j61QQyTncRBTizsVOIgM2VNTTbmXFAXjzxDm1EUOSrNnXlY6uukAnbbSEofruWCSmBbpRy/pt6G5+LyFWDdFUK1Wfu1Y+nOk72h6jcldS2KcvNRKwaVtwnSM+UINd3n+LQXRKcDIbUNxxFC1GjII3ReWwURsYzROu+INkKY0AJjOsM9jxQwXTfNWzfYAuAxAqNkeN/oW/fbxm3rNy23tgrDDB6gfE8+vel2r1avmin1RyWCCcLmCze1oXahU66p23KaKo1VywXaKGxjhqJ7CgeaSuYCndwG8nitkyiQk+Rhd7xBM3gWaN2SJzYefkrwn50ohLkhBkEJeionKn0d7KkTgcYPhx4s+5Z86iROBScjsNjzLIKlQi13Z7OoVQbOcKUfj2TsEt7usHWcjGxxk=
+    - GIT_NAME: Travis CI
+    - GIT_EMAIL: mitchellkrog@gmail.com
+    - TRAVIS_REPO_SLUG: mitchellkrogza/Suspicious.Snooping.Sniffing.Hacking.IP.Addresses
+    - GIT_BRANCH: master
+
+sudo: required
+
+cache:
+  - apt
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - export TZ=Africa/Johannesburg
+
+script:
+  - bash .dev-tools/generate-list.sh
+  - bash .dev-tools/modify-files-and-commit.sh
+
+before_deploy:
+  - bash .dev-tools/deploy-package.sh
+
+deploy:
+  provider: releases
+  api_key:
+    secure: ${GH_TOKEN}
+  skip_cleanup: true
+  on:
+    repo: mitchellkrogza/Suspicious.Snooping.Sniffing.Hacking.IP.Addresses
+    tags: false
+    branches:
+       only:
+         - "master"
+notifications:
+  email: false
