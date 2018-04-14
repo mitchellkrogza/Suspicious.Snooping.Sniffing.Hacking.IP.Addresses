@@ -69,9 +69,9 @@ git checkout master
 git add -A
 git commit -am "V1.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER [ci skip]"
 
-# *****************************************
-# Push our commit and tags back to the repo
-# *****************************************
+# ********************************
+# Push our commit back to the repo
+# ********************************
 
 sudo git push origin master
 
