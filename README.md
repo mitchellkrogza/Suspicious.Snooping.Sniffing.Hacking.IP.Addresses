@@ -4,7 +4,7 @@ A daily updated list of suspicious, snooping, sniffing and hacking attempts from
 
 This list of IP addresses is produced from REPEAT offenders against various services and ports. 
 
-The list is produced using the Repeat Offender Blacklist for Fail2Ban available at: https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning
+The list is produced using the [Repeat Offender Blacklist for Fail2Ban](https://github.com/mitchellkrogza/Fail2Ban-Blacklist-JAIL-for-Repeat-Offenders-with-Perma-Extended-Banning)
 
 It is hence safe to block all these IP addresses from your servers.
 
