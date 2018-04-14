@@ -38,9 +38,14 @@ SRC2=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv2.list
 #SRC6=$TRAVIS_BUILD_DIR/input-sources/fail2ban-ip-blacklist-srv6.list
 SRCOUT=$TRAVIS_BUILD_DIR/ips.list
 
+# First truncate our File
+
+sudo truncate -s 0 $SRCOUT
+
 # Join Files Together and Sort for Duplicates
 
 sudo cat $SRC1 $SRC2 > $SRCOUT
+sort -u $SRCOUT -o $SRCOUT
 
 # Format the file to Unix format
 
