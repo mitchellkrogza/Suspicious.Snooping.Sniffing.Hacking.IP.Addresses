@@ -33,6 +33,8 @@
 
 YEAR=$(date +"%Y")
 MONTH=$(date +"%m")
+DAY=$(date +"%d")
+
 cd $TRAVIS_BUILD_DIR
 
 # *******************************
@@ -67,7 +69,7 @@ git checkout master
 # *************************************
 
 git add -A
-git commit -am "V1.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER [ci skip]"
+git commit -am "V1.$YEAR.$MONTH.$DAY-$TRAVIS_BUILD_NUMBER [ci skip]"
 
 # ********************************
 # Push our commit back to the repo

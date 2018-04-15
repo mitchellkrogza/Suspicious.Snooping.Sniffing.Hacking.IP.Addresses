@@ -33,7 +33,9 @@
 
 YEAR=$(date +%Y)
 MONTH=$(date +%m)
-MY_GIT_TAG=V1.$YEAR.$MONTH.$TRAVIS_BUILD_NUMBER
+DAY=$(date +%d)
+
+MY_GIT_TAG=V1.$YEAR.$MONTH.$DAY-$TRAVIS_BUILD_NUMBER
 IPTOTAL=$(wc -l < $TRAVIS_BUILD_DIR/ips.list)
 
 # **********************************
