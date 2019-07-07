@@ -9,8 +9,8 @@ The list is produced using the [Repeat Offender Blacklist for Fail2Ban](https://
 It is hence safe to block all these IP addresses from your servers.
 
 _______________
-#### Version: V1.2019.07.06-1086
-#### Bad IP Count: 2747
+#### Version: V1.2019.07.07-1087
+#### Bad IP Count: 2748
 ____________________
 
 ## Help Support This Project 
