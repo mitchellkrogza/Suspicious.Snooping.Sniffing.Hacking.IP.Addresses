@@ -46,6 +46,11 @@ sudo truncate -s 0 $SRCOUT
 cat $TRAVIS_BUILD_DIR/input-sources/*.list > $TRAVIS_BUILD_DIR/ips.list
 sort -u $SRCOUT -o $SRCOUT
 
+# WHITELIST IPs / Removals
+
+bash ${TRAVIS_BUILD_DIR}/dev-tools/whitelist.sh
+
+
 # ******************************
 # Format the file to Unix format
 # ******************************
