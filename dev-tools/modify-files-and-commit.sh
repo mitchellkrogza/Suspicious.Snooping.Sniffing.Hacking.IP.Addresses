@@ -35,39 +35,22 @@ YEAR=$(date +"%Y")
 MONTH=$(date +"%m")
 DAY=$(date +"%d")
 
-cd $TRAVIS_BUILD_DIR
-
-# *******************************
-# Remove Remote Added by TravisCI
-# *******************************
-
-git remote rm origin
-
-# **************************
-# Add Remote with Secure Key
-# **************************
-
-git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
-
-# *********************
-# Set Our Git Variables
-# *********************
-
-git config --global user.email "${GIT_EMAIL}"
-git config --global user.name "${GIT_NAME}"
-git config --global push.default simple
-
-# *******************************************
-# Make sure we have checked out master branch
-# *******************************************
-
-git checkout master
+PrepareTravis () {
+    git remote rm origin
+    git remote add origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+    git config --global user.email "${GIT_EMAIL}"
+    git config --global user.name "${GIT_NAME}"
+    git config --global push.default simple
+    git checkout "${GIT_BRANCH}"
+}
+PrepareTravis
 
 
 # *************************************
 # Add all the modified files and commit
 # *************************************
 
+cd $TRAVIS_BUILD_DIR
 git add -A
 git commit -am "V1.$YEAR.$MONTH.$DAY-$TRAVIS_BUILD_NUMBER [ci skip]"
 
@@ -75,7 +58,7 @@ git commit -am "V1.$YEAR.$MONTH.$DAY-$TRAVIS_BUILD_NUMBER [ci skip]"
 # Push our commit back to the repo
 # ********************************
 
-sudo git push origin master
+git push origin master
 
 # MIT License
 
