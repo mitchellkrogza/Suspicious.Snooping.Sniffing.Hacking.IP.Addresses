@@ -12,7 +12,7 @@ It is hence safe to block all these IP addresses from your servers.
 
 Send a PR with your IP(s) added into the whitelist.me file.
 _______________
-#### Version: V1.2020.03.12-1535
+#### Version: V1.2020.03.13-1536
 #### Bad IP Count: 2704
 ____________________
 
