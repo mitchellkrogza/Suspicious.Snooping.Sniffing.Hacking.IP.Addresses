@@ -45,6 +45,10 @@ sudo truncate -s 0 $SRCOUT
 
 cat $TRAVIS_BUILD_DIR/input-sources/*.list > $TRAVIS_BUILD_DIR/ips.list
 sort -u $SRCOUT -o $SRCOUT
+sed -i '/^[[:space:]]*$/d' $SRCOUT
+sed -i '/^\s*$/d' $SRCOUT
+sed -i '/^$/d' $SRCOUT
+sed -n '/^\s*$/!p' $SRCOUT
 
 # WHITELIST IPs / Removals
 
