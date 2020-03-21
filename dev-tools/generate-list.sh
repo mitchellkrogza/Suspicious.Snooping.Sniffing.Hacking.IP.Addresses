@@ -57,6 +57,7 @@ bash ${TRAVIS_BUILD_DIR}/dev-tools/whitelist.sh
 # ******************************
 
 sudo dos2unix $SRCOUT
+sed -i '/^$/d' $SRCOUT
 
 # ***************
 # Exit the script
