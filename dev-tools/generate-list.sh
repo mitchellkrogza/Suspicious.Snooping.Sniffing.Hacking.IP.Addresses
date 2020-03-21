@@ -45,7 +45,6 @@ sudo truncate -s 0 $SRCOUT
 
 cat $TRAVIS_BUILD_DIR/input-sources/*.list > $TRAVIS_BUILD_DIR/ips.list
 sort -u $SRCOUT -o $SRCOUT
-sed -i '/^$/d' $SRCOUT
 
 # WHITELIST IPs / Removals
 
@@ -57,7 +56,7 @@ bash ${TRAVIS_BUILD_DIR}/dev-tools/whitelist.sh
 # ******************************
 
 sudo dos2unix $SRCOUT
-sed -i '/^$/d' $SRCOUT
+awk 'NF' $SRCOUT
 
 # ***************
 # Exit the script
