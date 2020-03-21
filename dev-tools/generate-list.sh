@@ -61,6 +61,11 @@ bash ${TRAVIS_BUILD_DIR}/dev-tools/whitelist.sh
 
 sudo dos2unix $SRCOUT
 awk 'NF' $SRCOUT
+sed -i '/^[[:space:]]*$/d' $SRCOUT
+sed -i '/^\s*$/d' $SRCOUT
+sed -i '/^$/d' $SRCOUT
+sed -n '/^\s*$/!p' $SRCOUT
+
 
 # ***************
 # Exit the script
