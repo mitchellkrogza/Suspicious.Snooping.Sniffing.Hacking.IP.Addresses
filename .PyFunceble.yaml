@@ -153,6 +153,7 @@ plain_list_domain: false
 print_dots: false
 quiet: false
 reputation: false
+shadow_file: false
 share_logs: false
 show_execution_time: false
 show_percentage: true
