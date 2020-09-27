@@ -12,8 +12,8 @@ It is hence safe to block all these IP addresses from your servers.
 
 Send a PR with your IP(s) added into the whitelist.me file.
 _______________
-#### Version: V1.2020.09.26-1885
-#### Bad IP Count: 1499
+#### Version: V1.2020.09.27-1886
+#### Bad IP Count: 1498
 ____________________
 
 ## Help Support This Project 
